@@ -1,5 +1,5 @@
-Pico File Prefixes Plugin
-=========================
+Pico File Prefixes
+==================
 
 This is the repository of Pico's official file prefixes plugin.
 
@@ -11,6 +11,9 @@ Install
 -------
 
 Just [download the latest release](https://github.com/PhrozenByte/pico-file-prefixes/releases/latest) and upload the `PicoFilePrefixes.php` file to the `plugins` directory of your Pico installation (e.g. `/var/www/html/pico/plugins/`). The plugin requires Pico 1.0+
+
+Config
+------
 
 The plugin recursively drops file prefixes of all files in the `content/blog/` directory by default. You can specify other directories by altering the `$config['PicoFilePrefixes']['recursiveDirs']` and/or `$config['PicoFilePrefixes']['dirs']` config variables in your `config/config.php`. The former parses all files of a directory recursively (i.e. including all its subfolders), whereas the latter parses just files in this particular directory. The default configuration looks like the following:
 
