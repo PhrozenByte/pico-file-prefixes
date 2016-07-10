@@ -66,7 +66,7 @@ class PicoFilePrefixes extends AbstractPicoPlugin
                 return preg_quote($recursiveDir, '#');
             }, $config['PicoFilePrefixes']['recursiveDirs'])) . ')(?:/.+)?';
 
-            if (!empty($config['PicoFilePrefixes']['recursiveDirs'])) {
+            if (!empty($config['PicoFilePrefixes']['dirs'])) {
                 $this->filePathRegex .= '|';
             }
         }
