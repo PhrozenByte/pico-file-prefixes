@@ -1,5 +1,5 @@
 {
-    "name": "PhrozenByte/pico-file-prefixes",
+    "name": "phrozenbyte/pico-file-prefixes",
     "description": "This is Pico's official file prefixes plugin, to drop file prefixes from page URLs. Pico is a stupidly simple, blazing fast, flat file CMS.",
     "keywords": ["pico","pico-plugin"],
     "homepage": "http://picocms.org/",
