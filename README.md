@@ -10,7 +10,7 @@ Pico is a stupidly simple, blazing fast, flat file CMS. See http://picocms.org/ 
 Install
 -------
 
-Just [download the latest release](https://github.com/PhrozenByte/pico-file-prefixes/releases/latest) and upload the `PicoFilePrefixes.php` file to the `plugins` directory of your Pico installation (e.g. `/var/www/html/pico/plugins/`). The plugin requires Pico 1.0+
+Just [download the latest release](https://github.com/PhrozenByte/pico-file-prefixes/releases/latest) and upload the `PicoFilePrefixes.php` file to the `plugins` directory of your Pico installation (e.g. `/var/www/html/pico/plugins/`). The plugin is also available on [Packagist.org](https://packagist.org/packages/phrozenbyte/pico-file-prefixes) and may be included in other projects via `composer require phrozenbyte/pico-file-prefixes`. The plugin requires Pico 1.0+
 
 Config
 ------
