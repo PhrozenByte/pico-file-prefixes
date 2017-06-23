@@ -18,20 +18,20 @@ Config
 The plugin recursively drops file prefixes of all files in the `content/blog/` directory by default. You can specify other directories by altering the `$config['PicoFilePrefixes']['recursiveDirs']` and/or `$config['PicoFilePrefixes']['dirs']` config variables in your `config/config.php`. The former parses all files of a directory recursively (i.e. including all its subfolders), whereas the latter parses just files in this particular directory. The default configuration looks like the following:
 
 ```php
-$config['PicoFilePrefixes']['recursiveDirs'] => array('blog');
+$config['PicoFilePrefixes']['recursiveDirs'] = array('blog');
 $config['PicoFilePrefixes']['dirs'] = array();
 ```
 
 If you want to additionally enable the plugin for the `content/showcase/` directory, try the following configuration:
 
 ```php
-$config['PicoFilePrefixes']['recursiveDirs'] => array('blog', 'showcase');
+$config['PicoFilePrefixes']['recursiveDirs'] = array('blog', 'showcase');
 $config['PicoFilePrefixes']['dirs'] = array();
 ```
 
 If you want to enable the plugin for any folder, try the following:
 
 ```php
-$config['PicoFilePrefixes']['recursiveDirs'] => array('.');
+$config['PicoFilePrefixes']['recursiveDirs'] = array('.');
 $config['PicoFilePrefixes']['dirs'] = array();
 ```
