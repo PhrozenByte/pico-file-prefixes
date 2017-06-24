@@ -1,6 +1,14 @@
 Pico File Prefixes Changelog
 ============================
 
+### Version 1.0.3
+Released: 2017-06-24
+
+```
+* [Fixed] Fix PHP syntax error in `README.md`
+* [Changed] Add `type: pico-plugin` to `composer.json`
+```
+
 ### Version 1.0.2
 Released: 2016-09-17
 
