@@ -2,7 +2,7 @@
     "name": "phrozenbyte/pico-file-prefixes",
     "type": "pico-plugin",
     "description": "This is Pico's official file prefixes plugin, to drop file prefixes from page URLs. Pico is a stupidly simple, blazing fast, flat file CMS.",
-    "keywords": ["pico","pico-plugin"],
+    "keywords": [ "pico", "picocms", "picocms-plugin", "pico-file-prefixes", "seo", "url-shortener" ],
     "homepage": "http://picocms.org/",
     "license": "MIT",
     "authors": [
@@ -12,9 +12,8 @@
             "role": "Lead Developer"
         },
         {
-            "name": "The Pico Community",
-            "homepage": "https://github.com/PhrozenByte/pico-file-prefixes/graphs/contributors",
-            "role": "Contributors"
+            "name": "Contributors",
+            "homepage": "https://github.com/PhrozenByte/pico-file-prefixes/graphs/contributors"
         }
     ],
     "support": {
