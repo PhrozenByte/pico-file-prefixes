@@ -1,4 +1,14 @@
 <?php
+/**
+ * This file is part of Pico. It's copyrighted by the contributors recorded
+ * in the version control history of the file, available from the following
+ * original location:
+ *
+ * <https://github.com/PhrozenByte/pico-file-prefixes/blob/master/PicoFilePrefixes.php>
+ *
+ * SPDX-License-Identifier: MIT
+ * License-Filename: LICENSE
+ */
 
 /**
  * Pico file prefixes plugin - drop file prefixes from page URLs
@@ -16,21 +26,30 @@
 class PicoFilePrefixes extends AbstractPicoPlugin
 {
     /**
+     * API version used by this plugin
+     *
+     * @var int
+     */
+    const API_VERSION = 2;
+
+    /**
      * Regex pattern matching directory paths with prefixed files
+     *
      * @var string
      */
     protected $filePathRegex = '';
 
     /**
      * List of pages whose URL has been altered
+     *
      * @var array
      */
     protected $prefixPages = array();
 
     /**
-     * Prepare the plugin's configuration and prepare the file path regex
+     * Prepares the plugin's configuration and the file path regex
      *
-     * @see    DummyPlugin::onRequestFile()
+     * @see DummyPlugin::onConfigLoaded()
      */
     public function onConfigLoaded(array &$config)
     {
@@ -54,11 +73,11 @@ class PicoFilePrefixes extends AbstractPicoPlugin
         }
 
         // prepare file path regex
-        $this->filePathRegex = '#^(';
+        $this->filePathRegex = '#^';
         if (!empty($config['PicoFilePrefixes']['recursiveDirs'])) {
             if (in_array('.', $config['PicoFilePrefixes']['recursiveDirs'])) {
                 // enable plugin for any directory
-                $this->filePathRegex = '#^(.+)$#';
+                $this->filePathRegex = '#^.+$#';
                 return;
             }
 
@@ -75,13 +94,13 @@ class PicoFilePrefixes extends AbstractPicoPlugin
                 return preg_quote($dir, '#');
             }, $config['PicoFilePrefixes']['dirs']));
         }
-        $this->filePathRegex .= ')$#';
+        $this->filePathRegex .= '$#';
     }
 
     /**
-     * Rewrite shortened URLs to their matching file on the filesystem
+     * Rewrites shortened URLs to their matching file on the filesystem
      *
-     * @see    DummyPlugin::onRequestFile()
+     * @see DummyPlugin::onRequestFile()
      */
     public function onRequestFile(&$file)
     {
@@ -107,16 +126,12 @@ class PicoFilePrefixes extends AbstractPicoPlugin
     }
 
     /**
-     * Alter URLs of prefixed files
+     * Alters URLs of prefixed files
      *
-     * @see    DummyPlugin::onPagesLoaded()
+     * @see DummyPlugin::onPagesLoaded()
      */
-    public function onPagesLoaded(
-        array &$pages,
-        array &$currentPage = null,
-        array &$previousPage = null,
-        array &$nextPage = null
-    ) {
+    public function onPagesLoaded(array &$pages)
+    {
         foreach ($pages as &$pageData) {
             $filePath = dirname($pageData['id']);
             if (preg_match($this->filePathRegex, $filePath)) {
