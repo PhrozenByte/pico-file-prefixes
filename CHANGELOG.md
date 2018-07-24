@@ -1,6 +1,14 @@
 Pico File Prefixes Changelog
 ============================
 
+### Version 2.0.0
+Released: 2018-07-24
+
+```
+* [New] Updated to Pico 2.0+
+* [Changed] Improved docs
+```
+
 ### Version 1.0.3
 Released: 2017-06-24
 
